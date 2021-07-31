@@ -4,6 +4,8 @@ This is the code related to "Sparse-to-dense Feature Matching: Intra and Inter d
   <img src='DsCML.jpg' width="1000px">
 </p>
 
+# Paper
+IEEE International Conference on Computer Vision (ICCV 2021)
 
 # Status
 The paper and related code will be released soon.
