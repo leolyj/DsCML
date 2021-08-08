@@ -49,7 +49,7 @@ source deactivate
 
 Download the [devkit](https://github.com/nutonomy/nuscenes-devkit) to your computer, decompress and enter it.
 
-Add the `python-sdk` directory to your `PYTHONPATH` environmental variable, by adding the following to your `~/.bashrc` :
+Add the `python-sdk` directory to your `PYTHONPATH` environmental variable, by adding the following to your `~/.bashrc`:
 ```
 export PYTHONPATH="${PYTHONPATH}:$HOME/nuscenes-devkit/python-sdk"
 ```
