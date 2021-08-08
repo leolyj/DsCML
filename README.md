@@ -32,7 +32,7 @@ You can follow the next steps to install the requairmented environment. This cod
 
 ### 2.1 Setup a Conda environment:
 
-We create a new Conda environment named `nuscenes`. We will use this environment for both nuScenes and nuImages.
+First, you are recommended to create a new Conda environment named `nuscenes`.
 ```
 conda create --name nuscenes python=3.7
 ```
