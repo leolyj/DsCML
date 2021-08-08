@@ -4,9 +4,9 @@ This is the code related to "Sparse-to-dense Feature Matching: Intra and Inter d
   <img src='DsCML.jpg' width="1000px">
 </p>
 
-## Paper
-[Paper Link](https://arxiv.org/abs/2107.14724)  
-IEEE International Conference on Computer Vision (ICCV 2021)
+## 1. Paper
+[Sparse-to-dense Feature Matching: Intra and Inter domain Cross-modal Learning in Domain Adaptation for 3D Semantic Segmentation](https://arxiv.org/abs/2107.14724)  
+**IEEE International Conference on Computer Vision (ICCV 2021)**
 
 If you find it helpful to your research, please cite as follows:
 
@@ -20,7 +20,7 @@ If you find it helpful to your research, please cite as follows:
 }
 ```
 
-## Preparation
+## 2. Preparation
 * PyTorch 1.7.1
 * CUDA 11.1
 * Python 3.7.9
@@ -30,7 +30,7 @@ If you find it helpful to your research, please cite as follows:
 
 You can follow the next steps to install the requairmented environment. This code is mainly modified from [xMUDA](https://github.com/valeoai/xmuda), you can also refer to its README if the installation isn't going well.
 
-### 1 Setup a Conda environment:
+### 2.1 Setup a Conda environment:
 
 We create a new Conda environment named `nuscenes`. We will use this environment for both nuScenes and nuImages.
 ```
@@ -45,7 +45,7 @@ To deactivate the virtual environment, use:
 source deactivate
 ```
 
-### 2 Install nuscenes-devkit:
+### 2.2 Install nuscenes-devkit:
 
 Download the [devkit](https://github.com/nutonomy/nuscenes-devkit) to your computer, decompress and enter it.
 
@@ -90,7 +90,7 @@ pip install pycocotools
 ```
 
 
-### 3 Install SparseConveNet:
+### 2.3 Install SparseConveNet:
 
 Download the [SparseConveNet](https://github.com/facebookresearch/SparseConvNet) to your computer, decompress, enter and develop it:
 ```
@@ -98,10 +98,10 @@ cd SparseConvNet/
 bash develop.sh
 ```
 
-## Datasets Preparation
+## 3. Datasets Preparation
 For Dataset preprocessing, the code and steps are highly borrowed from [xMUDA](https://github.com/valeoai/xmuda), you can see more preprocessing details from this [Link](https://github.com/valeoai/xmuda). We summarize the preprocessing as follows:
 
-### NuScenes
+### 3.1 NuScenes
 Download Nuscenes from [NuScenes website](https://www.nuscenes.org) and extract it.
 
 Before training, you need to perform preprocessing to generate the data first. Please edit the script `DsCML/data/nuscenes/preprocess.py` as follows and then run it.
@@ -110,7 +110,7 @@ Before training, you need to perform preprocessing to generate the data first. P
 
 `out_dir` should point to the desired output directory to store the pickle files
 
-### A2D2
+### 3.2 A2D2
 Download the A2D2 Semantic Segmentation dataset and Sensor Configuration from the [Audi website](https://www.a2d2.audi/a2d2/en/download.html)
 
 Similar to NuScenes preprocessing, please save all points that project into the front camera image as well as the segmentation labels to a pickle file.
@@ -123,7 +123,7 @@ Please edit the script `DsCML/data/a2d2/preprocess.py` as follows and then run i
 
 It should be set differently than the `root_dir` to prevent overwriting of images.
 
-### SemanticKITTI
+### 3.3 SemanticKITTI
 Download the files from the [SemanticKITTI website](http://semantic-kitti.org/dataset.html) and additionally the [color data](http://www.cvlibs.net/download.php?file=data_odometry_color.zip) from the [Kitti Odometry website](http://www.cvlibs.net/datasets/kitti/eval_odometry.php). Extract everything into the same folder.
 
 Please edit the script `DsCML/data/semantic_kitti/preprocess.py` as follows and then run it.
@@ -132,7 +132,7 @@ Please edit the script `DsCML/data/semantic_kitti/preprocess.py` as follows and 
 `out_dir` should point to the desired output directory to store the pickle files
 
 
-## Usage
+## 4. Usage
 
 You can training the DsCML by using cmd or IDE such as Pycharm.
 ```
@@ -146,7 +146,7 @@ python DsCML/train_DsCML.py --cfg=../configs/nuscenes/usa_singapore/xmuda.yaml
 python DsCML/train_DsCML.py --cfg=../configs/a2d2_semantic_kitti/xmuda.yaml
 ```
 
-## Results
+## 5. Results
 We present several qualitative results reported in our paper.
 <p align='center'>
   <img src='Results.jpg' width="1200px">
