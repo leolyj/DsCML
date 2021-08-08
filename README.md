@@ -16,7 +16,7 @@ IEEE International Conference on Computer Vision (ICCV 2021)
 * [SparseConvNet](https://github.com/facebookresearch/SparseConvNet)
 * [nuscenes-devkit](https://github.com/nutonomy/nuscenes-devkit)
 
-You can follow the next steps to install the requairmented environment. This code is mainly modified from [**xMUDA**](https://github.com/valeoai/xmuda), you can also refer to its readme.md if the installation isn't going well.
+You can follow the next steps to install the requairmented environment. This code is mainly modified from [**xMUDA**](https://github.com/valeoai/xmuda), you can also refer to its README if the installation isn't going well.
 * Download [**Painter by Numbers**](https://www.kaggle.com/c/painter-by-numbers/) which are paintings for GTR.
 * You should transfer the raw source dataset into multiple-style datasets using the pre-trained style transfer network [AdaIN](https://github.com/xunhuang1995/AdaIN-style) and put the correct paths in line 685 of the python file (./tools/TR_BR.py )
 * Download [**the model**](http://vllab.ucmerced.edu/ytsai/CVPR18/DeepLab_resnet_pretrained_init-f81d91e8.pth) pretrained on ImageNet. Put it into each file named as  (pretianed_model).
