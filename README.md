@@ -136,14 +136,14 @@ Please edit the script `DsCML/data/semantic_kitti/preprocess.py` as follows and 
 
 You can training the DsCML by using cmd or IDE such as Pycharm.
 ```
-python xmuda/train_xmuda.py --cfg=../configs/nuscenes/day_night/xmuda.yaml
+python DsCML/train_DsCML.py --cfg=../configs/nuscenes/day_night/xmuda.yaml
 ```
 The output will be written to `/home/<user>/workspace` by  default. You can change the path `OUTPUT_DIR` in the config file in (e.g. `configs/nuscenes/day_night/xmuda.yaml`) 
 
 You can start the trainings on the other UDA scenarios (USA/Singapore and A2D2/SemanticKITTI):
 ```
-python xmuda/train_xmuda.py --cfg=../configs/nuscenes/usa_singapore/xmuda.yaml
-python xmuda/train_xmuda.py --cfg=../configs/a2d2_semantic_kitti/xmuda.yaml
+python DsCML/train_DsCML.py --cfg=../configs/nuscenes/usa_singapore/xmuda.yaml
+python DsCML/train_DsCML.py --cfg=../configs/a2d2_semantic_kitti/xmuda.yaml
 ```
 
 ## Results
