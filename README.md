@@ -149,7 +149,7 @@ python xmuda/train_xmuda.py --cfg=../configs/a2d2_semantic_kitti/xmuda.yaml
 ## Results
 We present several qualitative results reported in our paper.
 <p align='center'>
-  <img src='Results.jpg' width="800px">
+  <img src='Results.jpg' width="1000px">
 </p>
 
 
