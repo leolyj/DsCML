@@ -154,4 +154,4 @@ We present several qualitative results reported in our paper.
 
 
 ## update status
-The code of CMAL is added and several related python files are updated.
+The code of CMAL is updated.
