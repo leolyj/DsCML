@@ -1,0 +1,60 @@
+MODEL_2D:
+  TYPE: "UNetResNet34"
+  DUAL_HEAD: True
+MODEL_3D:
+  TYPE: "SCN"
+  DUAL_HEAD: True
+DATASET_SOURCE:
+  TYPE: "NuScenesSCN"
+  TRAIN: ("train_day",)
+  NuScenesSCN:
+    preprocess_dir: "../../../4t/datasets/datasets_local/datasets_mjaritz/nuscenes_preprocess/preprocess"
+    nuscenes_dir: "../../../4t/datasets/datasets_local/datasets_mjaritz/nuscenes_preprocess"  # only front cam images are needed
+DATASET_TARGET:
+  TYPE: "NuScenesSCN"
+  TRAIN: ("train_night",)
+  VAL: ("val_night",)
+  TEST: ("test_night",)
+  NuScenesSCN:
+    preprocess_dir: "../../../4t/datasets/datasets_local/datasets_mjaritz/nuscenes_preprocess/preprocess"
+    nuscenes_dir: "../../../4t/datasets/datasets_local/datasets_mjaritz/nuscenes_preprocess"  # only front cam images are needed
+DATALOADER:
+  NUM_WORKERS: 4
+OPTIMIZER:
+  TYPE: "Adam"
+  BASE_LR: 0.001
+OPTIMIZER_D1:
+  TYPE: "Adam"
+  BASE_LR: 0.0001
+  POWER: 0.9
+OPTIMIZER_D2:
+  TYPE: "Adam"
+  BASE_LR: 0.0001
+  POWER: 0.9
+SCHEDULER:
+  TYPE: "MultiStepLR"
+  MultiStepLR:
+    gamma: 0.1
+    milestones: (80000, 90000)
+  MAX_ITERATION: 100000
+TRAIN:
+  BATCH_SIZE: 8
+  SUMMARY_PERIOD: 50
+  CHECKPOINT_PERIOD: 2000
+  CLASS_WEIGHTS: [2.68678412, 4.36182969, 5.47896839, 3.89026883, 1.]
+  XMUDA:
+    lambda_xm_src: 0.6
+    lambda_xm_trg: 0.1
+    lambda_xm_global_src: 0.5
+    lambda_xm_global_trg: 0.1
+    lambda_cc: 0.1
+    D_adv_src_2d: 0.1
+    D_adv_src_3d: 0.1
+    D_adv_trg_2d: 0.2
+    D_adv_trg_3d: 0.2
+    G_adv_trg_2d: 0.07
+    G_adv_trg_3d: 0.05
+VAL:
+  BATCH_SIZE: 32
+  PERIOD: 2000
+#OUTPUT_DIR: "path/to/output/directory/@"  #  @ will be replaced with config path, e.g. nuscenes/usa_singapore/xmuda
